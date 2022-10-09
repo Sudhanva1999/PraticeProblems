@@ -1,3 +1,5 @@
+# Write a program to perform division without
+# using divide operator
 def divide(A, B): 
 		isNeg = 1
 		if(A < 0 or B < 0) and not (A < 0 and B < 0):
