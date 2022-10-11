@@ -6,7 +6,7 @@
 def __init__(self):
     self.stack = []
 
-def preorder(self, root: 'Node') -> List[int]:
+def preorder(self, root):
     if(not root):
         return self.stack
     self.stack.append(root.val)
