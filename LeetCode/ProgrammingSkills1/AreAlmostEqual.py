@@ -20,7 +20,6 @@ def areAlmostEqual(s1,s2):
             i += 1
         if (difCount != 2):
             return False
-        temp = s1[ind[0]]
         s1new1 = s1[:ind[0]] + s1[ind[1]] + s1[ind[0] + 1:]
         s1new2 = s1new1[:ind[1]] + s1[ind[0]] +s1new1[ind[1] + 1:]
         if(s1new2 == s2):
