@@ -1,19 +1,15 @@
-def kDistinctChars(k, str):
-    hashstore = {}
-    maxLen = 0
-    startIndex = 0
-    for i,c in enumerate(str):
-        hashstore[c] = hashstore.get(c, 0) + 1
-        maxLen += 1
-        if len(hashstore) > k:
-            hashstore[str[startIndex]] -= 1
-            if hashstore[str[startIndex]] == 0:
-                del hashstore[str[startIndex]]
-            startIndex += 1
-            maxLen -= 1
-    if len(hashstore) == 1:
-        return list(hashstore.values())[0]
-     
-    return maxLen
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        hashstore = {}
+        startIndex = 0
+        maxLen = 0
+        for i,c in enumerate(s):
+            if(c in hashstore.keys() and startIndex <= hashstore[c]):
+                startIndex = hashstore[c] + 1
+                hashstore[c] = i
+            else:
+                hashstore[c] = i
+            maxLen = max(maxLen, (i - startIndex) + 1)
+        return maxLen
 
-
+        
