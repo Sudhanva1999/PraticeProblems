@@ -3,11 +3,9 @@ class Solution:
         s2 = s
         s1 = p
         hashstore = {}
-        found = {}
         for c in s1:
             hashstore[c] = hashstore.get(c, 0) + 1
         startIndex = 0
-        maxLen = 0
         matched = 0
         matchedList = []
         for window_end in range(len(s2)):
